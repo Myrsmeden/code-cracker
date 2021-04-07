@@ -7,7 +7,7 @@
   let singleTask = null;
 
   async function getAllTasks(): Promise<Task[]> {
-    const res = await fetch(`/tasks`);
+    const res = await fetch(`/.netlify/functions/tasks`);
     const tasks = await res.json();
 
     if (res.ok) {

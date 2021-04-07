@@ -9,7 +9,7 @@
   let correctAnswer = false;
 
   async function getTask(id: number): Promise<ClientTask> {
-    const res = await fetch(`/tasks/${id}`);
+    const res = await fetch(`/.netlify/functions/task/${id}`);
     const task = await res.json();
 
     if (res.ok) {
@@ -21,7 +21,7 @@
 
   async function sendAnswer(id: number, indataId: number) {
     incorrectAnswer = false;
-    const res = await fetch(`/tasks/${id}`, {
+    const res = await fetch(`/.netlify/functions/answer/${id}`, {
       method: 'POST',
       body: JSON.stringify({ answer, indataId }),
       headers: {

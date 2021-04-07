@@ -1,4 +1,4 @@
-import type Task from '../../shared/Task';
+import type Task from '../../src/shared/Task';
 
 import hex from './01-hex/hex';
 import base64 from './02-base64/base64';
