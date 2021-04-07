@@ -1,4 +1,4 @@
-import { APIGatewayEvent, APIGatewayProxyResult } from 'aws-lambda';
+import type { APIGatewayEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { getTaskById } from './tasks/tasks';
 
 export async function handler(event: APIGatewayEvent): Promise<APIGatewayProxyResult> {
