@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && npm run build-server",
     "build:watch": "rollup -cw",
     "build-server": "netlify-lambda build functions",
     "start": "node -r ts-node/register ./src/server/index.ts",
