@@ -2,7 +2,6 @@ import type { APIGatewayProxyResult } from 'aws-lambda';
 import { getAllTasks } from './tasks/tasks';
 
 export async function handler(): Promise<APIGatewayProxyResult> {
-  console.log('Hello');
   const tasks = getAllTasks();
 
   return {

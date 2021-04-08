@@ -41,7 +41,7 @@
   <p>...waiting</p>
 {:then task}
   <section class="task">
-    <p class="code-label">The provided code is:</p>
+    <p class="code-label">Crack this:</p>
     <div class="code">
       {task.code}
     </div>
@@ -62,18 +62,15 @@
 {/await}
 
 <style>
-  .task {
-    text-align: left;
-  }
-
-  .code-label,
-  label {
-    font-weight: bold;
+  .code-label {
+    margin-bottom: 20px;
   }
 
   .code {
-    padding: 15px;
-    border: 5px solid var(--primary-color-dark);
     word-wrap: break-word;
+    font-size: 32px;
+    font-weight: bold;
+    max-width: 20ch;
+    margin: 0 auto;
   }
 </style>

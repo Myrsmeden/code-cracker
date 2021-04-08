@@ -2,6 +2,7 @@
   import type Task from './shared/Task';
   import { Route } from 'tinro';
   import Taskviewer from './Taskviewer.svelte';
+  import Transition from './Transition.svelte';
 
   let allTasksPromise = getAllTasks();
   let singleTask = null;
@@ -26,20 +27,24 @@
 
 <main>
   <img src="/code-cracker-logo.png" class="logo" alt="Code Cracker" />
-  <Route path="/">
-    {#await allTasksPromise}
-      <p>...waiting</p>
-    {:then tasks}
-      {#each tasks as task}
-        <div class="task"><a href="/{task.id}">Task {task.id}</a></div>
-      {/each}
-    {:catch error}
-      <p style="color: red">{error.message}</p>
-    {/await}
-  </Route>
-  <Route path="/:id">
-    <Taskviewer />
-  </Route>
+  <Transition>
+    <Route path="/">
+      {#await allTasksPromise}
+        <p>...waiting</p>
+      {:then tasks}
+        <div class="tasks">
+          {#each tasks as task}
+            <div class="task-container"><a href="/{task.id}" class="task">Task {task.id}</a></div>
+          {/each}
+        </div>
+      {:catch error}
+        <p style="color: red">{error.message}</p>
+      {/await}
+    </Route>
+    <Route path="/:id">
+      <Taskviewer />
+    </Route>
+  </Transition>
 </main>
 
 <style>
@@ -55,9 +60,26 @@
     width: auto;
   }
 
+  .tasks {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .task {
+    display: block;
+    border: 3px solid var(--primary-color-dark);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 10px 10px 0;
+  }
+
+  .task:hover {
+    background-color: var(--primary-color-medium);
+  }
+
   @media (min-width: 640px) {
     main {
-      max-width: none;
+      max-width: 640px;
     }
   }
 </style>
