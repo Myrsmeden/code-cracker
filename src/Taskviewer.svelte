@@ -63,7 +63,6 @@
 
 <style>
   .task {
-    border: 1px solid var(--primary-color-medium);
     text-align: left;
   }
 

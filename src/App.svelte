@@ -25,6 +25,7 @@
 </script>
 
 <main>
+  <img src="/code-cracker-logo.png" class="logo" alt="Code Cracker" />
   <Route path="/">
     {#await allTasksPromise}
       <p>...waiting</p>
@@ -44,9 +45,14 @@
 <style>
   main {
     text-align: center;
-    padding: 1em;
+    padding: 0 1em;
     max-width: 240px;
     margin: 0 auto;
+  }
+
+  .logo {
+    height: 200px;
+    width: auto;
   }
 
   @media (min-width: 640px) {

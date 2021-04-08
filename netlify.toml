@@ -1,2 +1,4 @@
 [build]
   functions = "lambda"
+[dev]
+  functionsPort = 4006
