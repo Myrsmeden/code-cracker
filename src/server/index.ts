@@ -4,7 +4,7 @@ import path from 'path';
 import proxy from 'express-http-proxy';
 
 const app = express();
-const { PORT = 4000 } = process.env;
+const { PORT = 4001 } = process.env;
 
 app.use(
   '/.netlify',
