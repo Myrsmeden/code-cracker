@@ -32,6 +32,17 @@
       {#await allTasksPromise}
         <p>...waiting</p>
       {:then tasks}
+        <p>
+          Welcome to a creaking adventure of cracking the codes! The adventure consists of a set of
+          tasks, of which you can choose below. Your mission, should you choose to accept it, is to
+          solve the tasks and crack the codes.
+        </p>
+        <p>
+          Some tasks have alreapdy been given some previous investigation, and hence have some more
+          information about them. For confidentiality reasons, you need to further request more data
+          to prevent any secret information from leaking. But please, don't request more data than
+          you need.
+        </p>
         <div class="tasks">
           {#each tasks as task}
             <div class="task-container"><a href="/{task.id}" class="task">Task {task.id}</a></div>

@@ -9,4 +9,5 @@ export default {
     'Age is foolish and forgetful when it underestimates youth',
     "Mama always said life was like a box of chocolates. You never know what you're gonna get",
   ],
+  information: [],
 };

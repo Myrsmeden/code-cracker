@@ -9,6 +9,10 @@ export async function handler(): Promise<APIGatewayProxyResult> {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(tasks),
+    body: JSON.stringify(
+      tasks.map((task) => ({
+        id: task.id,
+      }))
+    ),
   };
 }

@@ -12,4 +12,5 @@ export default {
     '1027565',
     '712173',
   ],
+  information: []
 };

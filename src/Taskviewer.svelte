@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { ClientTask } from './shared/Task';
   import { meta } from 'tinro';
-  import { current_component } from 'svelte/internal';
   const route = meta();
   let getTaskPromise = getTask(Number(route.params.id));
   let answer = '';
@@ -37,6 +36,7 @@
   }
 </script>
 
+<a class="button" href="/">&larr; Back to tasks list</a>
 {#await getTaskPromise}
   <p>...waiting</p>
 {:then task}
@@ -56,6 +56,17 @@
     {#if correctAnswer}
       <p class="correct-answer">That was correct! <a href="/">Back to tasks list</a></p>
     {/if}
+
+    {#if task.information}
+      <div class="info-container">
+        <h2>Intercepted information</h2>
+        {#each task.information as info}
+          <div class="info">
+            {@html info.html}
+          </div>
+        {/each}
+      </div>
+    {/if}
   </section>
 {:catch error}
   <p style="color: red">{error.message}</p>
@@ -66,11 +77,20 @@
     margin-bottom: 20px;
   }
 
+  .button {
+    display: flex;
+    justify-self: flex-start;
+  }
+
   .code {
     word-wrap: break-word;
     font-size: 32px;
     font-weight: bold;
     max-width: 20ch;
     margin: 0 auto;
+  }
+
+  .info-container {
+    text-align: left;
   }
 </style>

@@ -6,12 +6,12 @@ export async function handler(event: APIGatewayEvent): Promise<APIGatewayProxyRe
   const indataId = Math.floor(Math.random() * task.indata.length);
   const input = task.indata[indataId];
   const code = task.encrypt(input);
-
+  const { id, information } = task;
   return {
     statusCode: 200,
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ id: task.id, code, indataId }),
+    body: JSON.stringify({ id, code, indataId, information }),
   };
 }

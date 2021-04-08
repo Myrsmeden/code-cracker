@@ -38,4 +38,5 @@ export default {
     'it is during our darkest moments that we must focus to see the light',
     'whoever is happy will make others happy too',
   ],
+  information: [],
 };
