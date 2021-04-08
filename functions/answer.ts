@@ -5,7 +5,7 @@ export async function handler(event: APIGatewayEvent): Promise<APIGatewayProxyRe
   const task = getTaskById(Number(event.path.match(/([^\/]*)\/*$/)[0]));
   const { indataId, answer } = JSON.parse(event.body);
   const input = task.indata[indataId];
-  const correct = input === answer;
+  const correct = input === answer.toLowerCase();
 
   return {
     statusCode: correct ? 200 : 406,
