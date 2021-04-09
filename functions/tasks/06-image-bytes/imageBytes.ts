@@ -13,7 +13,7 @@ const encrypt = (value: string): string => {
   const entries = Object.entries(files);
   for (let i = 0; i < entries.length; i++) {
     if (entries[i][1] === value) {
-      return `https://code-cracker.netlify.app/B${entries[i][0]}`;
+      return `https://code-cracker.netlify.app/By_${entries[i][0]}`;
     }
   }
 };

@@ -6,8 +6,9 @@ import substitution from './03-substitution-cipher/substitution';
 import dictionary from './04-dictionary/dictionary';
 import book from './05-book/book';
 import imageBytes from './06-image-bytes/imageBytes';
+import imageBits from './07-image-bits/imageBits';
 
-const tasks: Task[] = [hex, base64, substitution, dictionary, book, imageBytes];
+const tasks: Task[] = [hex, base64, substitution, dictionary, book, imageBytes, imageBits];
 
 export const getAllTasks = (): Task[] => tasks;
 

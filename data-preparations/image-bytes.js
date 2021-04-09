@@ -26,7 +26,7 @@ const encrypt = (fileName, input) => {
           image.setPixelColor(color, x, y);
         }
       }
-      image.write(`../public/B${fileName}`, (err) => {
+      image.write(`../public/By_${fileName}`, (err) => {
         if (err) {
           throw err;
         }
