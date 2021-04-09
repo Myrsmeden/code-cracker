@@ -29,7 +29,7 @@ const encrypt = (fileName, input) => {
           const bit = bitPosition < messageBits.length ? messageBits[bitPosition] : null;
           const pixel = Jimp.intToRGBA(image.getPixelColor(x, y));
           let g = pixel.g;
-          if (bit) {
+          if (bit !== null) {
             g = (g & 0xfe) + bit;
           }
           const color = Jimp.rgbaToInt(pixel.r, g, pixel.b, 255);
