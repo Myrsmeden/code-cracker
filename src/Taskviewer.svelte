@@ -12,6 +12,10 @@
 
   let progressObject;
 
+  const reload = () => {
+    getTaskPromise = getTask(Number(route.params.id));
+  };
+
   progress.subscribe((data) => {
     progressObject = data;
   });
@@ -56,7 +60,11 @@
   }
 </script>
 
-<a class="button" href="/">&larr; Back to tasks list</a>
+<nav class="navigation">
+  <a class="button" href="/">&larr; Back to tasks list</a>
+  <button class="reload-button" on:click={() => reload()}>&#8634; Reload</button>
+</nav>
+
 {#await getTaskPromise}
   <Loading />
 {:then task}
@@ -99,6 +107,14 @@
 {/await}
 
 <style>
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+  }
+  .reload-button {
+    display: inline-flex;
+    width: auto;
+  }
   .code-label {
     margin-bottom: 20px;
   }
