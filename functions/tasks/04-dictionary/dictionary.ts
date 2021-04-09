@@ -74,5 +74,10 @@ export default {
         'We have successfully intercepted a text message with the following information: <a href="/stats.txt" target="_new">stats.txt</a>',
       level: 'Required',
     },
+    { html: 'It seems low numbers appear more often than high numbers.', level: 'Hard' },
+    {
+      html: 'The highest number is never larger than the number of lines in the big text file.',
+      level: 'Medium',
+    },
   ],
 };

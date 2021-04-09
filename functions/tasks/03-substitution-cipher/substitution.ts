@@ -38,5 +38,16 @@ export default {
     'it is during our darkest moments that we must focus to see the light',
     'whoever is happy will make others happy too',
   ],
-  information: [],
+  information: [
+    {
+      html:
+        'It seems like the code is some kind of substitution encryption by the looks of the code. We are assuming that we are working with a "Caesar Cipher", but we have no idea how many steps to turn our "word wheel".',
+      level: 'Hard',
+    },
+    {
+      html:
+        'Each time we connect to get the crypto, we seem to get new messages. And we are not sure if they all are using the same offset or not. We think that we might need to generate all possible solutions and then automate it by comparing the output with a list of common English words',
+      level: 'Medium',
+    },
+  ],
 };
