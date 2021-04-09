@@ -1,3 +1,5 @@
+import { Level } from '../../../src/shared/Task';
+
 export default {
   id: 1,
   encrypt: (unencrypted: string): string => parseInt(unencrypted, 10).toString(16),
@@ -12,5 +14,15 @@ export default {
     '1027565',
     '712173',
   ],
-  information: []
+  information: [
+    {
+      html:
+        'After intercepting a few messages, it almost looks like the codes are numbers - but with letters in them. However, we have not seen the presense of all letters. How can we convert them to normal ones?',
+      level: 'Hard',
+    },
+    {
+      html: 'By looking at other codes, we have concluded that it might be hexadecimal numbers. ',
+      level: 'Medium',
+    },
+  ],
 };

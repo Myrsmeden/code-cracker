@@ -72,7 +72,7 @@ export default {
     {
       html:
         'We have successfully intercepted a text message with the following information: <a href="/stats.txt" target="_new">stats.txt</a>',
-      level: Level.Required,
+      level: 'Required',
     },
   ],
 };
