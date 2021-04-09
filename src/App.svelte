@@ -64,7 +64,7 @@
             is to solve the tasks and crack the codes.
           </p>
           <p>
-            Some tasks have alreapdy been given some previous investigation, and hence have some
+            Some tasks have already been given some previous investigation, and hence have some
             more information about them. For confidentiality reasons, you need to further request
             more data to prevent any secret information from leaking. But please, don't request more
             data than you need.

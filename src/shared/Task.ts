@@ -1,7 +1,6 @@
-export type Level = 'Required' | 'Hard' | 'Medium' | 'Easy';
 export interface Information {
   html: string;
-  level: Level;
+  level: string;
 }
 
 export interface ClientTask {
