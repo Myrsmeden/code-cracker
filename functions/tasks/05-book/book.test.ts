@@ -6,6 +6,7 @@ test('can encrypt', () => {
 
 test('can decrypt', () => {
   expect(task.decrypt('4:8:3 1:1:10')).toBe('gamla himmelen');
+  expect(task.decrypt('5:27:9 2:9:15 2:12:18 3:3:36 1:1:8 22:12:45 1:1:4 3:3:36 4:27:11')).toBe('Ni kan väl inte se någonting som inte finns')
 });
 
 test('can reverse', () => {
