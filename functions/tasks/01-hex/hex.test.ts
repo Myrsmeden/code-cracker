@@ -10,7 +10,6 @@ test('can decrypt', () => {
 
 test('can reverse', () => {
   const encrypted = task.indata.map(task.encrypt);
-  console.log(encrypted)
   const decrypted = encrypted.map(task.decrypt);
   decrypted.forEach((input) => expect(task.indata).toContain(input));
 });

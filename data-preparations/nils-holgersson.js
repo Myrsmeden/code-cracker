@@ -28,7 +28,7 @@ elements.forEach((element) => {
       );
 
       if (allTexts.length) {
-        current_chapter.push(...allTexts);
+        current_chapter.push(allTexts.join(' '));
       }
     }
   }

@@ -1,7 +1,7 @@
 import task from './book'
 
 test('can encrypt', () => {
-  expect(task.encrypt('Skåne hoppade')).toBe('2:5:2 4:4:2');
+  expect(task.encrypt('Skåne hoppade')).toBe('2:4:18 4:4:2');
 });
 
 test('can decrypt', () => {
