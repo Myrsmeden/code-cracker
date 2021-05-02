@@ -3,38 +3,8 @@
   import { Route } from 'tinro';
   import Taskviewer from './Taskviewer.svelte';
   import Transition from './Transition.svelte';
-  import { progress } from './stores';
   import Loading from './Loading.svelte';
-
-  progress.useLocalStorage();
-
-  let progressObject;
-
-  progress.subscribe((data) => {
-    progressObject = data;
-  });
-
-  const getStatus = (taskId: number) => {
-    const taskProgress = progressObject[taskId];
-
-    if (!taskProgress) {
-      return 'TBD';
-    }
-
-    if (taskProgress.finished) {
-      return 'Completed';
-    }
-
-    if (taskProgress.guesses?.length) {
-      return 'Guessed';
-    }
-
-    if (taskProgress.started) {
-      return 'Started';
-    }
-
-    return 'Unknown status';
-  };
+  import TaskItem from './TaskItem.svelte';
 
   let allTasksPromise = getAllTasks();
 
@@ -50,6 +20,7 @@
   }
 </script>
 
+<div />
 <main>
   <img src="/code-cracker-logo.png" class="logo" alt="Code Cracker" />
   <Transition>
@@ -64,25 +35,15 @@
             is to solve the tasks and crack the codes.
           </p>
           <p>
-            Some tasks have already been given some previous investigation, and hence have some
-            more information about them. For confidentiality reasons, you need to further request
-            more data to prevent any secret information from leaking. But please, don't request more
-            data than you need.
+            Some tasks have already been given some previous investigation, and hence have some more
+            information about them. For confidentiality reasons, you need to further request more
+            data to prevent any secret information from leaking. But please, don't request more data
+            than you need.
           </p>
+          <h2 class="task-title">Tasks</h2>
           <div class="tasks">
             {#each tasks as task}
-              <div class="task-container">
-                <a href="/{task.id}" class="task"
-                  >Task {task.id}<span class="status">{getStatus(task.id)}</span>
-                  {#if progressObject[task.id]?.revealed?.length}
-                    <div class="info-dots">
-                      {#each progressObject[task.id]?.revealed as level}
-                        <span class="info-dot" />
-                      {/each}
-                    </div>
-                  {/if}
-                </a>
-              </div>
+              <TaskItem {task} />
             {/each}
           </div>
         {:catch error}
@@ -120,44 +81,17 @@
     min-height: calc(100vh - 220px);
   }
 
-  .task-container {
-    display: flex;
+  .task-title {
+    color: #000000;
+    border-bottom: 5px solid #000000;
+    text-align: left;
+    font-size: 50px;
+    font-family: 'Dokdo';
   }
 
   .tasks {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  .task {
-    display: block;
-    border: 3px solid var(--primary-color-dark);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 0 10px 10px 0;
-  }
-
-  .task:hover {
-    background-color: var(--primary-color-medium);
-  }
-
-  .status {
-    display: block;
-    font-size: 80%;
-  }
-
-  .info-dots {
-    display: flex;
-    margin: 4px;
-  }
-
-  .info-dot {
-    display: block;
-    border-radius: 3px;
-    width: 6px;
-    height: 6px;
-    background-color: var(--primary-color-dark);
-    margin: 0 4px 4px 0;
   }
 
   .tracking-info {
