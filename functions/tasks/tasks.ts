@@ -8,8 +8,19 @@ import book from './05-book/book';
 import imageBytes from './06-image-bytes/imageBytes';
 import imageBits from './07-image-bits/imageBits';
 import poem from './08-poem-chipher/poem';
+import playfair from './09-playfair/playfair';
 
-const tasks: Task[] = [hex, base64, substitution, dictionary, book, imageBytes, imageBits, poem];
+const tasks: Task[] = [
+  hex,
+  base64,
+  substitution,
+  dictionary,
+  book,
+  imageBytes,
+  imageBits,
+  poem,
+  playfair,
+];
 
 export const getAllTasks = (): Task[] => tasks;
 
