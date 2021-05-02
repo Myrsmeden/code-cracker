@@ -20,7 +20,6 @@
   }
 </script>
 
-<div />
 <main>
   <img src="/code-cracker-logo.png" class="logo" alt="Code Cracker" />
   <Transition>
@@ -82,8 +81,8 @@
   }
 
   .task-title {
-    color: #000000;
-    border-bottom: 5px solid #000000;
+    color: var(--primary-color-dark);
+    border-bottom: 5px solid var(--primary-color-dark);
     text-align: left;
     font-size: 50px;
     font-family: 'Dokdo';

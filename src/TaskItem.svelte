@@ -58,17 +58,17 @@
     margin: 0 10px 10px 0;
     font-size: 52px;
     font-family: 'Dokdo';
-    border: 5px dashed #00000088;
-    color: #00000088;
+    border: 5px dashed var(--primary-color-medium);
+    color: var(--primary-color-medium);
     border-radius: 100%;
   }
 
   .task:hover {
     background-color: var(--primary-color-medium);
     border-style: solid;
-    border-color: #000000;
-    background-color: #ffffff;
-    color: #000000;
+    border-color: var(--primary-color-dark);
+    background-color: var(--color-white);
+    color: var(--primary-color-dark);
   }
 
   .status {
@@ -78,15 +78,15 @@
 
   .task-started {
     border-style: solid;
-    color: #000000;
-    border-color: #000000;
+    color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
   }
 
   .task-completed {
-    border-color: #000000;
+    border-color: var(--primary-color-dark);
     border-style: solid;
-    color: #ffffff;
-    background-color: #000000;
+    color: var(--color-white);
+    background-color: var(--primary-color-dark);
   }
 
   .info-dots {
