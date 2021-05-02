@@ -1,5 +1,4 @@
 import stats from './stats';
-import { Level } from '../../../src/shared/Task';
 /**
  * Rules:
    - The dictionary's first 100,000 words are used.
@@ -10,7 +9,7 @@ import { Level } from '../../../src/shared/Task';
    - Uncommon words (words not in the dictionary) are left unchanged.
  */
 
-const encrypt = (input: string) => {
+const encrypt = (input: string): string => {
   let encrypted_text = '';
   const words = input.split(/[\s.:,;\"]+/);
   words.forEach((word: string) => {

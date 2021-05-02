@@ -1,4 +1,3 @@
-import { kMaxLength } from 'node:buffer';
 import chapters from './chapters';
 
 const translatedWords = {};
@@ -28,7 +27,7 @@ const translateWord = (input, chapters) => {
   return translatedWords[input];
 };
 
-const encrypt = (input: string) =>
+const encrypt = (input: string): string =>
   input
     .split(/\s+/)
     .map((word) => translateWord(word, chapters))
